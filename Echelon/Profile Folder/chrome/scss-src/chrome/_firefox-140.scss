@@ -1,0 +1,77 @@
+/* ::::: Firefox 140 compatibility fixes ::::: */
+// Ported from hand edits made to the compiled echelon.css in the echelon-140 fork.
+
+// Titlebar appearance
+@media not (-moz-platform: windows-win10) {
+    :root[tabsintitlebar][sizemode="normal"] #titlebar {
+        appearance: auto;
+        -moz-default-appearance: -moz-window-titlebar;
+    }
+
+    :root[tabsintitlebar][sizemode="maximized"] #titlebar {
+        appearance: auto;
+        -moz-default-appearance: -moz-window-titlebar-maximized;
+    }
+}
+
+:root[tabsintitlebar][sizemode="normal"] .browser-titlebar {
+    appearance: none !important;
+    -moz-default-appearance: -moz-window-titlebar;
+}
+
+:root[tabsintitlebar][sizemode="maximized"] .browser-titlebar {
+    appearance: none !important;
+    -moz-default-appearance: -moz-window-titlebar-maximized;
+}
+
+:root[tabsintitlebar]:not([lwtheme]) {
+    color: CaptionText !important;
+}
+
+// Restore the tab audio icon overlay
+.tab-audio-button {
+    display: none !important;
+}
+
+.tabbrowser-tab:is([soundplaying], [muted], [activemedia-blocked]) {
+    --tab-icon-end-margin: 5.5px !important;
+}
+
+.tab-icon-overlay {
+    &:is([soundplaying], [muted], [activemedia-blocked]) {
+        display: revert !important;
+    }
+}
+
+.tab-icon-overlay:not([crashed]) {
+    &:is([soundplaying], [muted], [activemedia-blocked]) {
+        top: 0px !important;
+        inset-inline-end: 0px !important;
+    }
+
+    &:is([soundplaying], [muted], [activemedia-blocked]):hover {
+        background-color: var(--tab-icon-overlay-stroke, light-dark(white, black));
+    }
+
+    &[soundplaying] {
+        list-style-image: url("chrome://browser/skin/tabbrowser/tab-audio-playing-small.svg") !important;
+    }
+
+    &[muted] {
+        list-style-image: url("chrome://browser/skin/tabbrowser/tab-audio-muted-small.svg") !important;
+    }
+
+    &[activemedia-blocked] {
+        list-style-image: url("chrome://browser/skin/tabbrowser/tab-audio-blocked-small.svg") !important;
+    }
+}
+
+// Tabs toolbar top border
+#TabsToolbar::before {
+    background: var(--content-border-top-image) bottom !important;
+}
+
+// Hide caption buttons in the tabs toolbar when tabs are not on top
+:root:not([tabs-on-top]) #TabsToolbar .titlebar-buttonbox-container {
+    display: none !important;
+}

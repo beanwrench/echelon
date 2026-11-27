@@ -10,7 +10,7 @@
     pointer-events: all !important;
 }
 
-#urlbar-background, #searchbar {
+.urlbar-background, #urlbar-background, #searchbar {
     border-radius: 2.5px !important;
 }
 
@@ -129,7 +129,7 @@
                     margin-left: -27px !important;
                 }
     
-                #urlbar-background,
+                .urlbar-background, #urlbar-background,
                 .urlbar-input-container,
                 #urlbar-input-container {
                     clip-path: var(--urlbar-back-button-clip-path) !important;
@@ -146,7 +146,7 @@
                 padding-inline-start: 27px !important;
                 margin-inline-start: -27px !important;
 
-                #urlbar-background,
+                .urlbar-background, #urlbar-background,
                 .urlbar-input-container,
                 #urlbar-input-container {
                     border-top-left-radius: 0 !important;
