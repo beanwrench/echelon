@@ -255,14 +255,14 @@
     margin-inline-end: 0 !important;
 
     &:hover {
-        #urlbar-background {
+        .urlbar-background, #urlbar-background {
             background-color: var(--urlbar-background-color-hover) !important;
             border-color: var(--urlbar-border-color-hover) !important;
         }
     }
     
     &[focused="true"] {
-        #urlbar-background {                
+        .urlbar-background, #urlbar-background {                
             background-color: var(--urlbar-background-color-focused) !important;
             border-color: var(--urlbar-border-color-focused) !important;
         }
@@ -290,7 +290,7 @@
     height: auto !important;
 }
 
-#urlbar-background,
+.urlbar-background, #urlbar-background,
 #searchbar {
     height: var(--urlbar-min-height) !important;
     padding: 2px !important;
@@ -310,7 +310,7 @@
     #urlbar-container.unified-refresh-button {
         margin-inline-end: 0 !important;
 
-        #urlbar-background {
+        .urlbar-background, #urlbar-background {
             border-top-right-radius: 0 !important;
             border-bottom-right-radius: 0 !important;
             border-inline-end: 0 !important;

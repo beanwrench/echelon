@@ -146,6 +146,12 @@
     }
 }
 
+// Firefox 140 fix
+.button-menu-dropmarker {
+    appearance: none;
+    fill: currentColor;
+}
+
 #appmenu-button-container[open="true"],
 #appmenu-button[open="true"] {
     border-radius: 0 !important;

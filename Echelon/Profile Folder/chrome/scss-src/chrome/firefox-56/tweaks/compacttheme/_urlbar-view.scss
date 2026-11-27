@@ -17,7 +17,7 @@
                         margin-left: -27px !important;
                     }
 
-                    #urlbar-background,
+                    .urlbar-background, #urlbar-background,
                     .urlbar-input-container,
                     #urlbar-input-container {
                         mask: unset !important;
@@ -39,7 +39,7 @@
     }
 
     #searchbar,
-    #urlbar-background,
+    .urlbar-background, #urlbar-background,
     #stop-reload-button {
         color: inherit !important;
         background-color: var(--url-and-searchbar-background-color) !important;
@@ -49,19 +49,19 @@
     }
 
     #urlbar-container {
-        #urlbar-background {
+        .urlbar-background, #urlbar-background {
             border-inline-start-style: none !important;
         }
 
         &:hover {
-            #urlbar-background {
+            .urlbar-background, #urlbar-background {
                 background-color: var(--url-and-searchbar-background-color) !important;
                 border-color: var(--chrome-nav-bar-controls-border-color) !important;        
             }
         }
         
         &[focused="true"] {
-            #urlbar-background {               
+            .urlbar-background, #urlbar-background {               
                 box-shadow: none !important; 
                 background-color: var(--url-and-searchbar-background-color) !important;
                 border-color: var(--chrome-nav-bar-controls-border-color) !important;   
@@ -89,7 +89,7 @@
     &:not([chromehidden~="toolbar"]) {
         #urlbar-container.unified-refresh-button {    
             &[focused="true"] {
-                #urlbar-background,
+                .urlbar-background, #urlbar-background,
                 & + #stop-reload-button {                
                     box-shadow: none !important;
                 }
